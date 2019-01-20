@@ -1,0 +1,27 @@
+{
+    "name": "Ducky Locker",
+    "version": "1.0",
+    "description": "Ducky Locker!",
+    // "browser_action": {
+    //   "default_icon": "icon2.png",
+    //   "default_popup": "popup.html"
+    // },
+
+    "permissions": [
+        "tabs",
+        "activeTab"
+    ],
+    "background": {
+      "scripts": ["ducky.js"],
+      "persistent": false
+    },
+    "content_scripts": [{
+        // "matches": ["<all_urls>"],
+        "matches": ["*://*.slack.com/*"],
+        "js": ["content.js"]
+    }],
+    "browser_action": {
+        "default_title": "Test Extension"
+    },
+    "manifest_version": 2
+}
